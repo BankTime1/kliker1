@@ -27,11 +27,12 @@ app.post('/webhook', (req, res) => {
 
   console.log('Received message:', message);
 
+  // Отправляем ответ как можно раньше
+  res.sendStatus(200);
+
   if (message && message.text) {
     handleMessage(message);
   }
-
-  res.sendStatus(200);
 });
 
 function handleMessage(message) {
