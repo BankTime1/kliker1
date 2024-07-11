@@ -17,6 +17,8 @@ app.get('/', (req, res) => {
 app.post('/webhook', (req, res) => {
   const message = req.body.message;
 
+  console.log('Received message:', message);
+
   if (message && message.text) {
     handleMessage(message);
   }
@@ -43,6 +45,13 @@ function sendMessage(chatId, text) {
       chat_id: chatId,
       text: text
     })
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Message sent:', data);
+  })
+  .catch(error => {
+    console.error('Error sending message:', error);
   });
 }
 
