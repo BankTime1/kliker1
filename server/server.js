@@ -6,13 +6,13 @@ const fetch = require('node-fetch');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-let coins = 0; // Переменная для хранения количества монет
-
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public'))); // Предоставление статических файлов
 
 const TELEGRAM_API_TOKEN = '7301096593:AAH9Jcvg6ucTK8txyMB1xiNlhuPa6SRw0GA';
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_API_TOKEN}`;
+
+let coins = 0; // Переменная для хранения количества монет
 
 app.get('/', (req, res) => {
   res.send('Server is running');
