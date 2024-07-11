@@ -15,11 +15,7 @@ const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_API_TOKEN}`;
 let coins = 0; // Переменная для хранения количества монет
 
 app.get('/', (req, res) => {
-  res.send('Server is running');
-});
-
-app.get('/clicker', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html')); // Путь к вашему интерфейсу кликера
 });
 
 app.post('/webhook', (req, res) => {
@@ -39,7 +35,7 @@ function handleMessage(message) {
   const text = message.text;
 
   if (text === '/start') {
-    const clickerUrl = 'https://kliker1-1p1q.vercel.app/clicker'; // Замените на фактический URL вашей веб-страницы
+    const clickerUrl = 'https://kliker1-1p1q.vercel.app/'; // Замените на фактический URL вашей веб-страницы
     sendMessage(chatId, `Welcome to the Crypto Clicker! Click the link below to start earning coins:\n${clickerUrl}`);
   } else if (text === '/getcoins') {
     sendMessage(chatId, `You have ${coins} coins.`);
