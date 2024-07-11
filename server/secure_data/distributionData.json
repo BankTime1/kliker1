@@ -1,0 +1,13 @@
+{
+  "firstClickTimestamp": null,
+  "totalDistributedClicks": 0,
+  "totalDistributedAutoclickers": 0,
+  "dailyDistributed": 0,
+  "dailyAutoclickersDistributed": 0,
+  "dailyLimits": {
+    "1": 10500,
+    "2": 14000,
+    "3": 20000
+  },
+  "autoclickerLimits": 65000
+}

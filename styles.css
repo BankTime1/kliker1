@@ -1,0 +1,245 @@
+@font-face {
+  font-family: 'Agency FB';
+  src: url('AGENCYB.TTF') format('truetype');
+}
+
+body {
+  font-family: 'Agency FB', sans-serif;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-size: 36px;
+}
+
+.game-container {
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #1e1e1e;
+  max-width: 400px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reward-message {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: yellow;
+}
+
+.score,
+.autoclicker-container,
+.autoclicker-info {
+  margin: 20px 0;
+  font-size: 36px;
+}
+
+#click-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  animation: rotate 6s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+#click-button:active img {
+  transform: scale(0.9);
+  transition: transform 0.05s;
+}
+
+button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.95);
+  transition: transform 0.05s;
+}
+
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+#timer {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .image-container img {
+      width: 100px;
+      height: 100px;
+  }
+
+  button {
+      font-size: 12px;
+      padding: 8px 16px;
+  }
+
+  .game-container {
+      padding: 10px;
+  }
+}
+
+@keyframes fly-out {
+  0% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(0.5) translateY(-200px);
+      opacity: 0;
+  }
+}
+
+.fly-out {
+  position: absolute;
+  pointer-events: none;
+  animation: fly-out 2s forwards;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.app {
+  color: #e8e8e8;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 20px;
+}
+
+.app > img {
+  position: relative;
+  z-index: 1;
+  left: 50%;
+  transform: translate(-50%, 25px);
+}
+
+.app > .btn {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  padding: 10px 30px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background: #4c4c4c;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.app > .btn:hover {
+  background: #2f2f2f;
+  letter-spacing: 3px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
+}
+
+.scopeHidden {
+  overflow: hidden;
+  width: 800px;
+  height: 150px;
+  background: #2f2f2f;
+  border-radius: 10px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
+}
+
+.scopeHidden > ul {
+  position: relative;
+  left: 0;
+  display: inline-flex;
+  transition: 3s ease;
+}
+
+.scopeHidden > ul > li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+}
+
+.scopeHidden > ul > li.middle {
+  background: #282828;
+}
+#get-2-time-timer {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #ffcc00; /* Customize color as needed */
+}
+
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+#time-fortune-timer {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #ffcc00; /* Customize color as needed */
+}
+
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}

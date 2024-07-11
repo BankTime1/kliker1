@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIMEcoin Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="reward-message" id="reward-message" style="display: none;"></div>
+    <div class="game-container" id="clicker-interface">
+        <div class="score">TIMEcoin: <span id="score">0.000000000</span></div>
+        <button id="click-button">
+            <div class="image-container">
+                <img src="image.png" alt="Button Image">
+            </div>
+        </button>
+        <div class="autoclicker-container">
+            <button id="get-bonus">Get 8 TIME (after every 6 TIME mined)</button>
+        </div>
+        <button id="get-2-time">Get 2 TIME</button>
+        <div id="get-2-time-timer" style="display: none;"><span id="get-2-time-timer-display"></span></div>
+        <button id="time-fortune">Time Fortune</button>
+        <div id="time-fortune-timer" style="display: none;"><span id="time-fortune-timer-display"></span></div>
+    </div>
+
+    <div class="spinner-container" id="spinner-container" style="display: none;">
+        <div class="app">
+            <img src="pointer.png" alt="" width="50" height="50">
+            <div class="scopeHidden">
+                <ul></ul>
+            </div>
+            <button class="btn" onclick="startSpinner()">Крутить</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
