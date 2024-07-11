@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '../public'))); // Serve static files from the public directory
+app.use(express.static(path.join(__dirname, '../'))); // Serve static files from the root directory
 
 const TELEGRAM_API_TOKEN = 'YOUR_TELEGRAM_API_TOKEN';
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_API_TOKEN}`;
@@ -15,7 +15,7 @@ const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_API_TOKEN}`;
 let coins = 0; // Variable to store the number of coins
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html')); // Serve the clicker interface
+  res.sendFile(path.join(__dirname, '../index.html')); // Serve the clicker interface
 });
 
 app.post('/webhook', (req, res) => {
