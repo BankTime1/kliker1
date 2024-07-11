@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '../public'))); // Предоставление статических файлов
+app.use(express.static(path.join(__dirname))); // Предоставление статических файлов из корня проекта
 
 const TELEGRAM_API_TOKEN = '7301096593:AAH9Jcvg6ucTK8txyMB1xiNlhuPa6SRw0GA';
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_API_TOKEN}`;
@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/clicker', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.post('/webhook', (req, res) => {
@@ -27,7 +27,6 @@ app.post('/webhook', (req, res) => {
 
   console.log('Received message:', message);
 
-  // Отправляем ответ как можно раньше
   res.sendStatus(200);
 
   if (message && message.text) {
