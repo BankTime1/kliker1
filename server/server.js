@@ -10,6 +10,10 @@ app.use(bodyParser.json());
 const TELEGRAM_API_TOKEN = '7301096593:AAH9Jcvg6ucTK8txyMB1xiNlhuPa6SRw0GA';
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_API_TOKEN}`;
 
+app.get('/', (req, res) => {
+  res.send('Server is running');
+});
+
 app.post('/webhook', (req, res) => {
   const message = req.body.message;
 
