@@ -7,15 +7,15 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '../'))); // Предоставление статических файлов из корня проекта
+app.use(express.static(path.join(__dirname, '../public'))); // Serve static files from the public directory
 
 const TELEGRAM_API_TOKEN = '7301096593:AAH9Jcvg6ucTK8txyMB1xiNlhuPa6SRw0GA';
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_API_TOKEN}`;
 
-let coins = 0; // Переменная для хранения количества монет
+let coins = 0; // Variable to store the number of coins
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../index.html')); // Путь к вашему интерфейсу кликера
+  res.sendFile(path.join(__dirname, '../public', 'index.html')); // Serve the clicker interface
 });
 
 app.post('/webhook', (req, res) => {
@@ -35,7 +35,7 @@ function handleMessage(message) {
   const text = message.text;
 
   if (text === '/start') {
-    const clickerUrl = 'https://kliker1-1p1q.vercel.app/'; // Замените на фактический URL вашей веб-страницы
+    const clickerUrl = 'https://kliker1-1p1q.vercel.app/'; // Replace with the actual URL of your web page
     sendMessage(chatId, `Welcome to the Crypto Clicker! Click the link below to start earning coins:\n${clickerUrl}`);
   } else if (text === '/getcoins') {
     sendMessage(chatId, `You have ${coins} coins.`);
